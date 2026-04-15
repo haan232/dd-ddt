@@ -1,0 +1,104 @@
+/* ============================================
+   뜨뜻상점 — main.js
+   - 모바일 네비 토글
+   - 스크롤 상태 클래스 + 섹션 하이라이트
+   - 인스타그램 embed.js 지연 로드 (Portfolio 뷰포트 진입 시)
+   - Footer 연도 자동
+   ============================================ */
+
+(function () {
+  'use strict';
+
+  // ---------- 연도 ----------
+  var yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // ---------- 모바일 네비 토글 ----------
+  var nav = document.getElementById('nav');
+  var toggle = document.getElementById('navToggle');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('is-open');
+    });
+    // 메뉴 항목 클릭 시 닫기
+    nav.querySelectorAll('.nav__menu a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ---------- 스크롤 그림자 ----------
+  var onScroll = function () {
+    if (!nav) return;
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ---------- 섹션 하이라이트 ----------
+  var menuLinks = Array.prototype.slice.call(document.querySelectorAll('.nav__menu a[href^="#"]'));
+  var sections = menuLinks
+    .map(function (a) { return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = '#' + entry.target.id;
+          menuLinks.forEach(function (a) {
+            a.classList.toggle('is-active', a.getAttribute('href') === id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    sections.forEach(function (s) { sectionObserver.observe(s); });
+  }
+
+  // ---------- Instagram embed.js 지연 로드 ----------
+  // Portfolio 섹션이 뷰포트 근처에 오면 1회만 스크립트 주입.
+  // <blockquote class="instagram-media"> 가 있으면 자동 렌더.
+  var portfolio = document.getElementById('portfolio');
+  var igLoaded = false;
+
+  function loadInstagramEmbed() {
+    if (igLoaded) return;
+    igLoaded = true;
+    // 이미 embed.js 가 있으면 process() 만 호출
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+      return;
+    }
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.instagram.com/embed.js';
+    s.onload = function () {
+      if (window.instgrm && window.instgrm.Embeds) {
+        window.instgrm.Embeds.process();
+      }
+    };
+    document.body.appendChild(s);
+  }
+
+  if (portfolio && 'IntersectionObserver' in window) {
+    var portfolioObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          // blockquote.instagram-media 가 하나라도 있으면 로드
+          if (portfolio.querySelector('blockquote.instagram-media')) {
+            loadInstagramEmbed();
+          }
+          portfolioObserver.disconnect();
+        }
+      });
+    }, { rootMargin: '200px 0px' });
+    portfolioObserver.observe(portfolio);
+  } else if (portfolio && portfolio.querySelector('blockquote.instagram-media')) {
+    loadInstagramEmbed();
+  }
+
+})();

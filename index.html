@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>뜨뜻살롱 · 손끝에서 시작되는 뜨뜻한 하루</title>
+  <meta name="description" content="뜨뜻살롱 — 뜨개 작가 포트폴리오 및 클래스 안내" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="뜨뜻살롱" />
+  <meta property="og:description" content="뜨개 작가 포트폴리오 및 클래스 안내" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <link rel="icon" href="assets/logo.png" />
+
+  <!-- Fonts: Gowun Batang (serif, 손맛), Playfair Display (영문 악센트), Pretendard (본문) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo" aria-label="뜨뜻살롱 홈">
+        <span class="nav__logo-mark" aria-hidden="true"></span>
+        <span class="nav__logo-text">뜨뜻살롱</span>
+      </a>
+      <nav class="nav__menu" aria-label="주요 메뉴">
+        <a href="#about">소개</a>
+        <a href="#classes">클래스</a>
+        <a href="#portfolio">작업물</a>
+      </nav>
+      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__inner">
+      <div class="hero__logo">
+        <!-- 인스타그램 프로필 이미지를 assets/logo.png 로 저장해주세요. -->
+        <img src="assets/logo.png" alt="뜨뜻살롱 로고" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <div class="hero__logo-fallback" aria-hidden="true">뜨</div>
+      </div>
+      <h1 class="hero__brand">뜨뜻살롱</h1>
+      <p class="hero__tagline">손끝에서 시작되는 뜨뜻한 하루</p>
+      <!-- TODO: 원하는 태그라인으로 교체 -->
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="https://www.instagram.com/_eudaimonian" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          인스타그램에서 작업물 보기
+        </a>
+        <a class="btn btn--ghost" href="#about">아래로 둘러보기 ↓</a>
+      </div>
+    </div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 Q150,0 300,30 T600,30 T900,30 T1200,30 V60 H0 Z" fill="currentColor"/></svg>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT (with Contact) ============ -->
+  <section class="section section--wool" id="about">
+    <div class="about">
+      <div class="about__image">
+        <img src="assets/logo.png" alt="작가 이미지" onerror="this.style.display='none';" />
+      </div>
+      <div class="about__body">
+        <span class="section__kicker">About</span>
+        <h2 class="section__title">작가 소개</h2>
+        <p>
+          <!-- TODO: 작가 소개 문단으로 교체하세요. -->
+          실 한 가닥이 한 코 한 코 모여 따뜻한 무언가가 되는 과정을 사랑합니다.
+          뜨뜻살롱은 그 시간을 함께 나누기 위한 작은 공방이자 기록입니다.
+        </p>
+        <p>
+          <!-- TODO: 작업 철학/배경 문단으로 교체하세요. -->
+          느리게 완성되는 것들이 주는 온기를 믿고, 오늘도 손끝에서 실을 풀어갑니다.
+        </p>
+
+        <!-- Contact (merged into About) -->
+        <div class="about__contact" id="contact">
+          <h3 class="about__contact-title">문의</h3>
+          <p class="about__contact-lead">
+            클래스 신청과 작업 문의는 아래 채널로 편하게 연락주세요. 확인 후 순서대로 답장드립니다.
+          </p>
+          <div class="about__contact-buttons">
+            <a class="btn btn--primary" href="https://ig.me/m/_eudaimonian" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              인스타그램 DM
+            </a>
+            <a class="btn btn--secondary" href="mailto:chloe_yschoi@naver.com?subject=%5B%EB%9C%A8%EB%9C%BB%EC%82%B4%EB%A1%B1%5D%20%EB%AC%B8%EC%9D%98">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              이메일 보내기
+            </a>
+          </div>
+          <p class="about__contact-note">
+            · 수업 문의 시 희망 클래스(기수/정규), 가능 요일·시간대, 간단한 뜨개 경험을 함께 적어주시면 빠른 안내가 가능해요.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CLASSES ============ -->
+  <section class="section" id="classes">
+    <div class="section__head">
+      <span class="section__kicker">Classes</span>
+      <h2 class="section__title">클래스 안내</h2>
+      <p class="section__lead">함께 뜨고 싶은 분들을 위한 두 가지 수업을 준비하고 있어요.</p>
+    </div>
+
+    <div class="classes">
+      <article class="class-card">
+        <div class="class-card__tag">기수제</div>
+        <h3 class="class-card__title">기수 클래스</h3>
+        <p class="class-card__desc">
+          <!-- TODO: 기수제 클래스 상세 설명 -->
+          일정한 기간 동안 한 작품을 처음부터 완성까지 함께 만들어가는 심화 수업입니다.
+          소수 정예로 진행되며 매 기수마다 커리큘럼이 열립니다.
+        </p>
+        <ul class="class-card__meta">
+          <li>· 소수 정예</li>
+          <li>· 커리큘럼 기반</li>
+          <li>· 정기 모집</li>
+        </ul>
+        <a class="btn btn--primary" href="#contact">문의하기</a>
+      </article>
+
+      <article class="class-card">
+        <div class="class-card__tag">정규</div>
+        <h3 class="class-card__title">정규 클래스</h3>
+        <p class="class-card__desc">
+          <!-- TODO: 정규 클래스 상세 설명 -->
+          원하는 작품을 선택해 나의 속도로 배울 수 있는 상시 수업입니다.
+          입문자부터 중급자까지, 지금 만들고 싶은 것에서 시작합니다.
+        </p>
+        <ul class="class-card__meta">
+          <li>· 상시 신청</li>
+          <li>· 개인 맞춤</li>
+          <li>· 난이도 선택</li>
+        </ul>
+        <a class="btn btn--primary" href="#contact">문의하기</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO ============ -->
+  <section class="section section--cream" id="portfolio">
+    <div class="section__head">
+      <span class="section__kicker">Portfolio</span>
+      <h2 class="section__title">작업물</h2>
+      <p class="section__lead">인스타그램 @_eudaimonian 에 기록한 손뜨개 작업들입니다.</p>
+    </div>
+
+    <div class="portfolio__grid" id="portfolioGrid">
+      <!--
+        실제 인스타 게시물 URL을 아래 형식으로 추가하세요. 6칸이 기본이며, 필요한 만큼 복제/삭제 가능.
+        iframe의 src는 "포스트URL/embed/" 형식입니다. CSS에서 헤더/캡션을 잘라 이미지만 보이게 처리합니다.
+        클릭하면 "인스타에서 보기" 링크로 이동하도록 overlay 링크를 함께 넣어두었습니다.
+      -->
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/DWl19SlDiGM/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/DWl19SlDiGM/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/DEBvGWUTh1E/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/DEBvGWUTh1E/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/DDR_dObzDRK/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/DDR_dObzDRK/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/C_AoKv0PRNq/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/C_AoKv0PRNq/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/CcHKKnrhyeg/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/CcHKKnrhyeg/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+      <a class="portfolio__card portfolio__card--embed" href="https://www.instagram.com/p/DE7ijnczQ8S/" target="_blank" rel="noopener" aria-label="인스타그램에서 보기">
+        <iframe src="https://www.instagram.com/p/DE7ijnczQ8S/embed/" loading="lazy" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </a>
+    </div>
+
+    <div class="portfolio__more">
+      <a class="btn btn--ghost" href="https://www.instagram.com/_eudaimonian" target="_blank" rel="noopener">
+        인스타그램에서 더 보기 →
+      </a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__brand">뜨뜻살롱</p>
+      <p class="footer__meta">
+        <a href="https://www.instagram.com/_eudaimonian" target="_blank" rel="noopener">@_eudaimonian</a>
+        <span aria-hidden="true">·</span>
+        <span id="year"></span> © 뜨뜻살롱. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
