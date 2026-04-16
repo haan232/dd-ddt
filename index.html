@@ -4,15 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>뜨뜻살롱 · 손끝에서 시작되는 뜨뜻한 하루</title>
-  <meta name="description" content="뜨뜻살롱 — 뜨개 작가 포트폴리오 및 클래스 안내" />
+  <meta name="description" content="뜨뜻살롱 — 뜨개 작가 포트폴리오 및 수업 안내" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="뜨뜻살롱" />
-  <meta property="og:description" content="뜨개 작가 포트폴리오 및 클래스 안내" />
+  <meta property="og:description" content="뜨개 작가 포트폴리오 및 수업 안내" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/logo.png" />
 
   <link rel="icon" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
   <!-- Fonts: Gowun Batang (serif, 손맛), Playfair Display (영문 악센트), Pretendard (본문) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
 
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?v=73" />
 </head>
 <body>
 
@@ -28,7 +29,7 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo" aria-label="뜨뜻살롱 홈">
-        <span class="nav__logo-mark" aria-hidden="true"></span>
+        <svg class="nav__logo-mark" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9 21 9 12 15 12 15 21"/></svg>
         <span class="nav__logo-text">뜨뜻살롱</span>
       </a>
       <nav class="nav__menu" aria-label="주요 메뉴">
@@ -67,12 +68,11 @@
       </div>
       <div class="about__body">
         <span class="section__kicker">About</span>
-        <h2 class="section__title">소개</h2>
-        <p>
-          Leontia ; 레온<br>
-          * 다양한 바늘과 손을 쓰는 걸 좋아하는 사람 :)
+        <h2 class="section__title">Leontia ; 레온</h2>
+        <p class="about__intro">
+          <strong>*&nbsp;&nbsp;다양한 바늘과 손을 쓰는 걸 좋아하는 사람</strong>
         </p>
-        <p>
+        <p class="about__desc">
           일상 속 여유와 몰입 사이의 그 어딘가에서<br>
           다정하고 작은 것들이 모여<br>
           뜨뜻한 무언가가 되어가는 시간을 나누고자 합니다.
@@ -82,18 +82,15 @@
         <div class="about__contact" id="contact">
           <h3 class="about__contact-title">Contact</h3>
           <p class="about__contact-lead">
-            클래스 신청 및 작업에 관련된 문의는 아래 채널로 편하게 연락주세요.
+            수업 및 작업 관련 문의는 아래 채널로 문의 부탁드려요.<br>
+            (수업은 마포구 서강대역 근방 주차가능한 편안한 장소에서 진행됩니다)
           </p>
           <div class="about__contact-buttons">
-            <a class="btn btn--secondary" href="mailto:chloe_yschoi@naver.com?subject=%5B%EB%9C%A8%EB%9C%BB%EC%82%B4%EB%A1%B1%5D%20%EB%AC%B8%EC%9D%98">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a class="btn btn--secondary" href="http://pf.kakao.com/_XNdCX/chat" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 5.805 2 10.5c0 2.9 1.657 5.474 4.2 7.044L5.1 21.1a.5.5 0 0 0 .65.65l4.35-1.98C10.68 19.92 11.33 20 12 20c5.523 0 10-3.805 10-8.5S17.523 2 12 2z"/></svg>
               카카오톡
             </a>
           </div>
-          <p class="about__contact-note">
-            클래스의 경우에는 정해진 공방 없으며<br>
-            마포구 근방 주차 가능한 편안한 장소에서 이루어 집니다.
-          </p>
         </div>
       </div>
     </div>
@@ -103,41 +100,34 @@
   <section class="section" id="classes">
     <div class="section__head">
       <span class="section__kicker">Classes</span>
-      <h2 class="section__title">클래스 안내</h2>
-      <p class="section__lead">함께 뜨고 싶은 분들을 위한 두 가지 수업을 준비하고 있어요.</p>
+      <h2 class="section__title">수업 안내</h2>
     </div>
 
     <div class="classes">
       <article class="class-card">
-        <div class="class-card__tag">기수제</div>
-        <h3 class="class-card__title">기수 클래스</h3>
+        <div class="class-card__top">
+          <div class="class-card__tag">자격증반</div>
+          <a class="btn btn--ghost jiha-link" href="https://www.jiha.org" target="_blank" rel="noopener">www. jiha.org</a>
+        </div>
+        <h3 class="class-card__title">일본수예보급협회(JIHA) 니트부문</h3>
         <p class="class-card__desc">
-          <!-- TODO: 기수제 클래스 상세 설명 -->
-          일정한 기간 동안 한 작품을 처음부터 완성까지 함께 만들어가는 심화 수업입니다.
-          소수 정예로 진행되며 매 기수마다 커리큘럼이 열립니다.
+          '일본수예보급협회'는 일본 문부과학성의 인가를 받은 공익재단법인으로, 1964년부터 보그수예 컨설턴트협회로 시작하여 지금까지 수예 문화를 널리 알리고 지도자를 양성해온 기관입니다. 단순히 취미로 끝나는 것이 아니라, 체계적인 커리큘럼을 통해 단계별로 자격증을 취득할 수 있습니다.<br>
+          니트를 포함한 다양한 분야를 다루며, 자격증 취득 후 공방을 열거나 강의 같은 실제 활동으로 이어갈 수 있습니다. 오랜 역사와 전국적인 네트워크 덕분에 일본 내 가장 신뢰받는 수예 교육기관으로 자리 잡았고, 지금도 많은 사람들이 이곳에서 배움과 즐거움을 함께하고 있습니다.
         </p>
-        <ul class="class-card__meta">
-          <li>· 소수 정예</li>
-          <li>· 커리큘럼 기반</li>
-          <li>· 정기 모집</li>
-        </ul>
-        <a class="btn btn--primary" href="#contact">문의하기</a>
       </article>
 
       <article class="class-card">
-        <div class="class-card__tag">정규</div>
-        <h3 class="class-card__title">정규 클래스</h3>
+        <div class="class-card__tag">취미반</div>
+        <h3 class="class-card__title">대바늘</h3>
         <p class="class-card__desc">
-          <!-- TODO: 정규 클래스 상세 설명 -->
           원하는 작품을 선택해 나의 속도로 배울 수 있는 상시 수업입니다.
           입문자부터 중급자까지, 지금 만들고 싶은 것에서 시작합니다.
         </p>
-        <ul class="class-card__meta">
-          <li>· 상시 신청</li>
-          <li>· 개인 맞춤</li>
-          <li>· 난이도 선택</li>
-        </ul>
-        <a class="btn btn--primary" href="#contact">문의하기</a>
+        <h3 class="class-card__title">코바늘</h3>
+        <p class="class-card__desc">
+          원하는 작품을 선택해 나의 속도로 배울 수 있는 상시 수업입니다.
+          입문자부터 중급자까지, 지금 만들고 싶은 것에서 시작합니다.
+        </p>
       </article>
     </div>
   </section>
@@ -147,7 +137,6 @@
     <div class="section__head">
       <span class="section__kicker">Portfolio</span>
       <h2 class="section__title">작업물</h2>
-      <p class="section__lead">인스타그램 @_eudaimonian 에 기록한 손뜨개 작업들입니다.</p>
     </div>
 
     <div class="portfolio__grid" id="portfolioGrid">
@@ -177,8 +166,9 @@
     </div>
 
     <div class="portfolio__more">
-      <a class="btn btn--ghost" href="https://www.instagram.com/_eudaimonian" target="_blank" rel="noopener">
-        인스타그램에서 더 보기 →
+      <a class="btn btn--secondary btn--insta" href="https://www.instagram.com/_eudaimonian" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        인스타그램
       </a>
     </div>
   </section>
