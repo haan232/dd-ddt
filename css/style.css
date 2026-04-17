@@ -500,6 +500,27 @@ p.about__contact-note {
 .class-card__title { margin: 0; font-size: 24px; line-height: 1; margin-top: 16px; }
 .class-card__desc + .class-card__title { margin-top: 16px; }
 .class-card__desc { margin: 0; color: #4C6053; font-size: 15px; line-height: 1.5; text-align: justify; }
+.class-card__pictos {
+  display: none;
+}
+@media (min-width: 760px) {
+  .class-card__pictos {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-top: auto;
+    padding-top: 32px;
+  }
+  .class-card__picto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--brown-soft);
+    font-size: 13px;
+    font-family: var(--sans);
+  }
+}
 .class-card__meta {
   list-style: none;
   padding: 0;
