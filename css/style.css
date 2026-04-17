@@ -101,6 +101,24 @@ p { margin: 0 0 1em; }
   transition: opacity 0.2s ease;
 }
 .btn--tooltip:hover::after { opacity: 1; }
+.btn--tooltip-below { position: relative; }
+.btn--tooltip-below::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: transparent;
+  color: #355E42;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.btn--tooltip-below:hover::after { opacity: 1; }
 .class-card__title-row { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
 .class-card__title-row .class-card__title { line-height: 1; }
 .class-card__top { display: flex; align-items: center; justify-content: space-between; }
@@ -278,7 +296,7 @@ p { margin: 0 0 1em; }
    SECTION base
    ============================================ */
 .section {
-  padding: 60px 24px;
+  padding: 60px 35px;
 }
 .section--cream { background: var(--cream); }
 .section--wool  { background: var(--cream-2); }
@@ -333,6 +351,9 @@ p { margin: 0 0 1em; }
   transition: transform .3s ease, box-shadow .3s ease;
 }
 .portfolio__card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(43, 58, 46, 0.12); opacity: 1; }
+.portfolio__card img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; filter: saturate(0.45) contrast(0.85); transition: filter 0.3s ease; }
+.portfolio__card:hover img { filter: saturate(1) contrast(1); }
+.lightbox__img { -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; }
 .portfolio__card.is-placeholder {
   display: flex;
   align-items: center;
@@ -689,6 +710,7 @@ p.about__contact-note {
   text-align: center;
 }
 @media (max-width: 720px) {
+  .portfolio__notice { font-size: 10px; line-height: 1.3; max-width: calc(100vw - 70px); }
   .footer {
     padding: 40px 24px;
     padding-bottom: max(40px, calc(40px + env(safe-area-inset-bottom)));
@@ -762,6 +784,7 @@ p.about__contact-note {
   #portfolio .section__head { margin-bottom: 34px; }
   #portfolio .portfolio__card { aspect-ratio: 5 / 3; border-radius: 8px; }
   #portfolio .portfolio__card img { object-fit: cover; object-position: center; width: 100%; height: 100%; }
+
   .about__body { text-align: center; }
   .about__contact-buttons .btn--secondary { font-size: 13px; padding: 6px 10px; }
   .class-card__title { line-height: 1; font-size: clamp(15px, 4.2vw, 23px); white-space: nowrap; }
@@ -769,6 +792,62 @@ p.about__contact-note {
   .about__body .about__desc,
   .about__contact-title,
   .about__contact-lead { text-align: left; }
+}
+
+/* ============================================
+   Lightbox
+   ============================================ */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox.is-open { display: flex; }
+.lightbox__wrap {
+  position: relative;
+  max-width: min(500px, 85vw);
+  max-height: 75vh;
+}
+.lightbox__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 75vh;
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+.lightbox__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  width: auto;
+  height: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  mix-blend-mode: difference;
+  padding: 0;
+  z-index: 1;
+}
+.lightbox__close:hover { opacity: 0.75; }
+.portfolio__card { cursor: pointer; }
+.portfolio__notice {
+  font-size: 11px;
+  color: var(--brown-soft);
+  line-height: 1.5;
+  max-width: 775px;
+  margin: 24px auto 0;
+  text-align: justify;
+  opacity: 0.7;
 }
 
 /* ============================================
