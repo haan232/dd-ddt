@@ -38,7 +38,9 @@ body {
   color: var(--brown);
   background: var(--cream);
   line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
+  font-stretch: 100%;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
   text-rendering: optimizeLegibility;
 }
 img { max-width: 100%; display: block; }
@@ -79,6 +81,26 @@ p { margin: 0 0 1em; }
   border-color: #355E42;
 }
 .btn--secondary:hover { background: #355E42; color: var(--cream); border-color: #355E42; }
+.mail-fold { stroke: white; }
+.btn--secondary:hover .mail-fold { stroke: #355E42; }
+.btn--tooltip { position: relative; }
+.btn--tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 4px);
+  transform: translateY(-50%);
+  background: transparent;
+  color: #355E42;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 5px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.btn--tooltip:hover::after { opacity: 1; }
 .class-card__title-row { display: flex; align-items: center; gap: 12px; flex-wrap: nowrap; }
 .class-card__title-row .class-card__title { line-height: 1; }
 .class-card__top { display: flex; align-items: center; justify-content: space-between; }
@@ -103,6 +125,14 @@ p { margin: 0 0 1em; }
 }
 .btn--insta:hover svg rect { fill: var(--cream); }
 .btn--insta:hover svg circle { stroke: #355E42; fill: #355E42; }
+.btn--store {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 105px;
+  height: 70px;
+  padding: 0;
+}
 
 /* ============================================
    NAV
@@ -227,7 +257,7 @@ p { margin: 0 0 1em; }
 }
 .hero__tagline {
   font-size: clamp(15px, 2vw, 18px);
-  color: #4C6053;
+  color: #2B3A2E;
   margin: 0 0 40px;
 }
 .hero__cta {
@@ -287,11 +317,10 @@ p { margin: 0 0 1em; }
   max-width: var(--maxw);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
-@media (min-width: 640px) { .portfolio__grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 960px) { .portfolio__grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 760px) { .portfolio__grid { grid-template-columns: repeat(4, 250px); gap: 25px 25px; justify-content: center; } }
 
 .portfolio__card {
   position: relative;
@@ -371,7 +400,9 @@ p { margin: 0 0 1em; }
 }
 
 .portfolio__more {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   margin-top: 48px;
 }
 
@@ -419,6 +450,7 @@ p { margin: 0 0 1em; }
 .about__body .about__desc {
   font-size: 16px;
   line-height: 1.5;
+  color: #2B3A2E;
 }
 
 /* About 내부에 통합된 문의 블록 */
@@ -436,7 +468,7 @@ p { margin: 0 0 1em; }
 .about__body .about__contact-lead {
   margin: 0 0 20px;
   font-size: 16px;
-  color: #4C6053;
+  color: #2B3A2E;
   line-height: 1.5;
 }
 .about__contact-buttons {
@@ -445,6 +477,12 @@ p { margin: 0 0 1em; }
   flex-wrap: wrap;
   margin-top: 32px;
   margin-bottom: 18px;
+}
+.about__contact-buttons .btn--secondary {
+  width: 90px;
+  justify-content: center;
+  font-size: 13px;
+  padding: 6px 10px;
 }
 p.about__contact-note {
   margin: 0;
@@ -499,28 +537,7 @@ p.about__contact-note {
 }
 .class-card__title { margin: 0; font-size: 24px; line-height: 1; margin-top: 16px; }
 .class-card__desc + .class-card__title { margin-top: 16px; }
-.class-card__desc { margin: 0; color: #4C6053; font-size: 15px; line-height: 1.5; text-align: justify; }
-.class-card__pictos {
-  display: none;
-}
-@media (min-width: 760px) {
-  .class-card__pictos {
-    display: flex;
-    justify-content: center;
-    gap: 48px;
-    margin-top: auto;
-    padding-top: 32px;
-  }
-  .class-card__picto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: var(--brown-soft);
-    font-size: 13px;
-    font-family: var(--sans);
-  }
-}
+.class-card__desc { margin: 0; color: #2B3A2E; font-size: 15px; line-height: 1.5; text-align: justify; }
 .class-card__meta {
   list-style: none;
   padding: 0;
@@ -579,13 +596,13 @@ p.about__contact-note {
   gap: 3px;
 }
 .curriculum-chart__name {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--brown);
   line-height: 1.4;
 }
 .curriculum-chart__info {
-  font-size: 10.5px;
+  font-size: 11px;
   color: #4C6053;
   line-height: 1.5;
 }
@@ -641,9 +658,13 @@ p.about__contact-note {
   font-size: 11px;
   line-height: 1;
 }
+.br--desktop { display: none; }
 @media (min-width: 760px) {
+  .br--desktop { display: inline; }
   .curriculum-chart__info br { display: none; }
   .curriculum-chart__badge--info { text-align: left; margin-bottom: 18px; }
+  .curriculum-chart__name { font-size: 14px; }
+  .curriculum-chart__info { font-size: 12px; }
 }
 .curriculum-chart__footnote {
   margin: 10px 0 0;
@@ -660,14 +681,26 @@ p.about__contact-note {
   background: var(--brown);
   color: var(--cream);
   padding: 48px 24px;
+  padding-bottom: max(48px, calc(48px + env(safe-area-inset-bottom)));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
-.footer__inner { max-width: var(--maxw); margin: 0 auto; }
+@media (max-width: 720px) {
+  .footer {
+    padding: 40px 24px;
+    padding-bottom: max(40px, calc(40px + env(safe-area-inset-bottom)));
+  }
+}
+.footer__inner { max-width: var(--maxw); margin: 0 auto; width: 100%; text-align: center; }
 .footer__brand {
   font-family: var(--serif);
   font-size: 22px;
   margin: 0 0 12px;
   color: var(--cream);
+  text-align: center;
 }
 .footer__meta {
   font-size: 14px;
@@ -676,7 +709,8 @@ p.about__contact-note {
   display: flex;
   gap: 10px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 .footer__meta a { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
 
@@ -725,6 +759,9 @@ p.about__contact-note {
   .section { padding: 72px 32px; }
   #classes { padding-bottom: 40px; }
   #portfolio { padding-top: 40px; }
+  #portfolio .section__head { margin-bottom: 34px; }
+  #portfolio .portfolio__card { aspect-ratio: 5 / 3; border-radius: 8px; }
+  #portfolio .portfolio__card img { object-fit: cover; object-position: center; width: 100%; height: 100%; }
   .about__body { text-align: center; }
   .about__contact-buttons .btn--secondary { font-size: 13px; padding: 6px 10px; }
   .class-card__title { line-height: 1; font-size: clamp(15px, 4.2vw, 23px); white-space: nowrap; }
