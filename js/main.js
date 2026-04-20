@@ -143,4 +143,33 @@
     });
   }
 
+  // ---------- 모바일: 툴팁 버튼 2단 탭 (첫 탭 hover, 두 번째 탭 이동) ----------
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover)').matches;
+  if (!canHover) {
+    var tooltipBtns = document.querySelectorAll('.btn--tooltip, .btn--tooltip-below');
+    var activeBtn = null;
+    var resetTimer = null;
+    tooltipBtns.forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        if (activeBtn !== btn) {
+          e.preventDefault();
+          if (activeBtn) activeBtn.classList.remove('is-tapped');
+          activeBtn = btn;
+          btn.classList.add('is-tapped');
+          if (resetTimer) clearTimeout(resetTimer);
+          resetTimer = setTimeout(function () {
+            if (activeBtn) activeBtn.classList.remove('is-tapped');
+            activeBtn = null;
+          }, 4000);
+        }
+      });
+    });
+    document.addEventListener('click', function (e) {
+      if (activeBtn && !activeBtn.contains(e.target)) {
+        activeBtn.classList.remove('is-tapped');
+        activeBtn = null;
+      }
+    }, true);
+  }
+
 })();
