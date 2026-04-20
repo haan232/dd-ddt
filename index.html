@@ -10,10 +10,18 @@
   <meta property="og:title" content="뜨뜻살롱" />
   <meta property="og:description" content="뜨개 작가 포트폴리오 및 수업 안내" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo.png" />
+  <meta property="og:image" content="assets/logo-knit.png" />
+  <meta property="og:image:width" content="1024" />
+  <meta property="og:image:height" content="1024" />
 
-  <link rel="icon" href="assets/logo.png" />
-  <link rel="apple-touch-icon" href="assets/logo.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="뜨뜻살롱" />
+  <meta name="twitter:description" content="뜨개 작가 포트폴리오 및 수업 안내" />
+  <meta name="twitter:image" content="assets/logo-knit.png" />
+
+  <link rel="icon" href="assets/logo-knit.png" />
+  <link rel="apple-touch-icon" href="assets/logo-knit.png" />
 
   <!-- Fonts: Gowun Batang (serif, 손맛), Playfair Display (영문 악센트), Pretendard (본문) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -47,8 +55,7 @@
   <section class="hero" id="hero">
     <div class="hero__inner">
       <div class="hero__logo">
-        <!-- 인스타그램 프로필 이미지를 assets/logo.png 로 저장해주세요. -->
-        <img src="assets/logo.png" alt="뜨뜻살롱 로고" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+        <img src="assets/logo-knit.png" alt="뜨뜻살롱 로고" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="hero__logo-fallback" aria-hidden="true">뜨</div>
       </div>
       <h1 class="hero__brand">뜨뜻살롱</h1>
@@ -68,7 +75,7 @@
       </div>
       <div class="about__body">
         <span class="section__kicker">About</span>
-        <h2 class="section__title">Leontia ; 레온</h2>
+        <h2 class="section__title" style="font-style:italic;"><span style="font-size:calc(1em - 3px); margin-right:0.2em;">knitter</span> Leontia</h2>
         <p class="about__intro">
           <strong>다양한 바늘과 손을 쓰는 걸 좋아하는 사람</strong>
         </p>
@@ -77,13 +84,23 @@
           다정하고 작은 것들이 모여<br>
           뜨뜻한 무언가가 되어가는 시간을 나누고자 합니다.
         </p>
+        <p class="about__desc about__credentials about__credentials--list">
+          <strong>·&nbsp; 일본수예보급협회 대바늘뜨기 강사 [핸드니트]</strong><br>
+          <strong>·&nbsp; 일본수예보급협회 코바늘뜨기 강사 [핸드니트]</strong><br>
+          <strong>·&nbsp; 일본수예보급협회 스티치100 강사 [자수]</strong>
+        </p>
+        <p class="about__desc about__credentials">
+          연세대학교 건축학과 졸업<br>
+          前) 영화 및 드라마 등 문화콘텐츠 투자/기획<br>
+          現) 핸드니트 외 다양한 크래프트 작업 중<span class="credentials-dot" aria-hidden="true">●</span>
+        </p>
 
         <!-- Contact (merged into About) -->
         <div class="about__contact" id="contact">
           <h3 class="about__contact-title">contact</h3>
           <p class="about__contact-lead">
-            수업 및 작업 관련 문의는 아래 채널로 연락주세요.<br>
-            <span style="font-size:15px;">(마포 서강대역 근방 편안한 장소에서 수업합니다)</span>
+            수업 및 작업 관련 문의는 아래 채널로 연락주세요.
+            <span style="display:block; font-size:14.5px; padding-left:1ch; margin-top:8.8px;">-&nbsp; 마포 서강대역 근방 편안한 장소에서 수업합니다.<br>-&nbsp; 3인 이상의 경우, 지역에 따라 출강 가능합니다.</span>
           </p>
           <div class="about__contact-buttons">
             <a class="btn btn--secondary" href="http://pf.kakao.com/_XNdCX/chat" target="_blank" rel="noopener noreferrer">
@@ -216,11 +233,28 @@
             <span>·</span>
             <span>재료비(실,바늘,도안 등)는 수업료와 별도입니다. 재료는 직접 구매해 오셔도 되고, 사전 논의 후 대신 구매해드리는 것도 가능해요. 바늘 등 기본 개인도구는 미리 준비해 오셔야 합니다 :)</span>
           </span>
-          <span style="display:flex;gap:0.4em;margin-top:0.6em;">
-            <span>·</span>
-            <span>수업시간 : 평일 10am~3pm (상담필요)</span>
-          </span>
         </p>
+
+        <div class="schedule-chart" aria-hidden="true">
+          <span class="schedule-chart__title-outer curriculum-chart__badge curriculum-chart__badge--info">[ 수업 현황 ]</span>
+          <table class="schedule-chart__table">
+            <thead>
+              <tr>
+                <th class="schedule-chart__label curriculum-chart__badge curriculum-chart__badge--info"><span class="schedule-chart__label-text">[ 수업 현황 ]</span></th>
+                <th>mon</th><th>tue</th><th>wed</th><th>thu</th><th>fri</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th>10:00</th><td class="is-busy">●</td><td class="is-busy">●</td><td></td><td></td><td class="is-busy">●</td></tr>
+              <tr><th>11:00</th><td class="is-busy">●</td><td class="is-busy">●</td><td></td><td></td><td class="is-busy">●</td></tr>
+              <tr><th>12:00</th><td class="is-busy">●</td><td class="is-busy">●</td><td></td><td></td><td class="is-busy">●</td></tr>
+              <tr><th>13:00</th><td></td><td class="is-busy">●</td><td></td><td></td><td></td></tr>
+              <tr><th>14:00</th><td></td><td></td><td></td><td></td><td></td></tr>
+              <tr><th>15:00</th><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+          </table>
+          <div class="schedule-chart__legend"><span class="schedule-chart__dot">●</span> 수업중</div>
+        </div>
       </article>
     </div>
   </section>

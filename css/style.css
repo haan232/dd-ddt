@@ -453,7 +453,7 @@ p { margin: 0 0 1em; }
 }
 @media (min-width: 860px) {
   .about { grid-template-columns: 1fr 1.4fr; gap: 72px; align-items: start; }
-  .about__image { margin-top: 35px; width: 100%; }
+  .about__image { margin-top: 38px; width: 100%; }
 }
 .about__image img { width: 100%; height: 100%; object-fit: cover; object-position: bottom; }
 .about__body .section__kicker { margin-bottom: 8px; }
@@ -477,11 +477,27 @@ p { margin: 0 0 1em; }
   line-height: 1.5;
   color: #2B3A2E;
 }
+.about__body .about__credentials {
+  font-size: 14.5px;
+  margin-top: 1em;
+  padding-left: 1ch;
+  color: #4C6053;
+}
+.about__body .about__desc:not(.about__credentials) + .about__credentials {
+  margin-top: 2.6em;
+}
+.about__body .credentials-dot {
+  font-size: 0.825em;
+  color: rgba(76, 96, 83, 0.7);
+  margin-left: 0.55em;
+  display: inline-block;
+  transform: translateY(-1px);
+}
 
 /* About 내부에 통합된 문의 블록 */
 .about__contact {
-  margin-top: 40px;
-  padding-top: 32px;
+  margin-top: 48px;
+  padding-top: 19.2px;
   border-top: 1px solid rgba(43, 58, 46, 0.12);
 }
 .about__contact-title {
@@ -700,6 +716,101 @@ p.about__contact-note {
 }
 
 /* ============================================
+   SCHEDULE CHART (취미반 수업 현황)
+   ============================================ */
+.schedule-chart {
+  display: block;
+  margin-top: auto;
+  padding-top: 16px;
+  font-family: var(--sans);
+}
+.schedule-chart__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12.5px;
+  color: #4C6053;
+  table-layout: fixed;
+}
+.schedule-chart__table th,
+.schedule-chart__table td {
+  height: 24px;
+  padding: 0;
+  text-align: center;
+  font-weight: 400;
+  border: 1px solid rgba(43, 58, 46, 0.12);
+}
+.schedule-chart__table thead th {
+  background: rgba(239, 241, 235, 0.55);
+  color: var(--brown);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  border-top-color: transparent;
+}
+.schedule-chart__table thead th:first-child {
+  display: table-cell;
+  background: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  margin: 0;
+  color: var(--brown-soft);
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1;
+  padding-top: 0;
+  width: 85px;
+}
+.schedule-chart__table thead th:not(:first-child) {
+  width: 79px;
+}
+.schedule-chart__table thead th:nth-child(2) {
+  border-left-color: transparent;
+}
+.schedule-chart__table tr > :first-child {
+  border-left-color: transparent;
+}
+.schedule-chart__table tr > :last-child {
+  border-right-color: transparent;
+}
+.schedule-chart__table tbody th {
+  background: rgba(239, 241, 235, 0.55);
+  color: var(--brown);
+  font-size: 12px;
+  font-weight: 400;
+}
+.schedule-chart__table td.is-busy {
+  background: rgba(198, 209, 188, 0.45);
+  color: #355E42;
+  font-size: 10px;
+  line-height: 1;
+}
+.schedule-chart__title-outer { display: none; }
+.schedule-chart__legend {
+  margin-top: 8px;
+  font-size: 12.5px;
+  color: #355E42;
+  text-align: right;
+}
+.schedule-chart__dot {
+  color: #355E42;
+  font-size: 10px;
+}
+@media (max-width: 759px) {
+  .schedule-chart { padding-top: 9px; }
+  .schedule-chart__title-outer { display: block; margin-bottom: 9.6px; }
+  .schedule-chart__label-text { display: none; }
+  .schedule-chart__table thead th:first-child { width: auto; }
+  .schedule-chart__table thead th:not(:first-child) { width: auto; }
+  .schedule-chart__table tbody th { font-size: 11px; }
+  .schedule-chart__table thead th:not(:first-child) { font-size: 11px; }
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {
@@ -783,7 +894,7 @@ p.about__contact-note {
   }
   .hero { padding: 120px 32px 50px; }
   .section { padding: 72px 32px; }
-  #about { padding-top: 50px; }
+  #about { padding-top: 24px; }
   #classes { padding-bottom: 40px; }
   #portfolio { padding-top: 40px; }
   #portfolio .section__head { margin-bottom: 34px; }
