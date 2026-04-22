@@ -143,6 +143,15 @@ p { margin: 0 0 1em; }
   .btn--ghost:hover { background: #7A9682; border-color: #7A9682; color: var(--cream); }
 }
 .btn--lg { padding: 16px 28px; font-size: 16px; }
+.btn--round {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
+  line-height: 1.1;
+  font-size: 12px;
+  text-align: center;
+}
 .btn--insta {
   flex-direction: column;
   align-items: center;
@@ -621,7 +630,48 @@ a.class-card__tag {
   color: var(--brown-soft);
   font-size: 14px;
 }
-.class-card .btn { align-self: flex-start; margin-top: auto; }
+.class-card .btn { align-self: flex-end; margin-top: auto; }
+
+.class-card__fee-wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.class-card__fee-wrap .class-card__fee-text { margin: 0; text-align: center; }
+.class-card__fee-wrap .btn--round {
+  align-self: flex-end;
+  margin-top: 10px;
+  transform: translate(15px, 23px);
+}
+
+.class-card__schedule-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: -10px;
+}
+.class-card__schedule-footer .schedule-chart__legend { margin-top: 0; }
+.class-card__schedule-footer .btn--round {
+  align-self: flex-start;
+  margin-top: -6px;
+  transform: translate(15px, 23px);
+}
+
+@media (min-width: 760px) {
+  .class-card { position: relative; padding-bottom: 70px; }
+  .class-card__fee-wrap .btn--round,
+  .class-card__schedule-footer .btn--round {
+    position: absolute;
+    right: 22px;
+    bottom: 18px;
+    margin: 0;
+    transform: none;
+  }
+}
+@media (max-width: 759px) {
+  .class-card__fee-wrap .btn--round { margin-top: 3px; }
+}
 
 /* ============================================
    CURRICULUM CHART
@@ -752,7 +802,6 @@ a.class-card__tag {
    ============================================ */
 .schedule-chart {
   display: block;
-  margin-top: auto;
   padding-top: 12.8px;
   font-family: var(--sans);
 }
@@ -826,7 +875,7 @@ a.class-card__tag {
   margin-top: 8px;
   font-size: 12.5px;
   color: #355E42;
-  text-align: right;
+  text-align: left;
 }
 .schedule-chart__dot {
   color: #355E42;
